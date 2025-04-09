@@ -1,0 +1,108 @@
+[
+    {
+      "name": "Concentrate Whey Protein",
+      "price": 29.99,
+      "image": "IMG/concentratewheyprotien.jpeg",
+      "description": "A high-quality whey protein concentrate that supports lean muscle development, enhances post-workout recovery, and provides essential amino acids for daily nutritional needs. Ideal for beginners and fitness enthusiasts alike.",
+      "category": "Whey Protein"
+    },
+    {
+      "name": "Gold Whey Protein",
+      "price": 39.99,
+      "image": "IMG/goldwheyprotien.jpeg",
+      "description": "Our gold standard whey protein blend is designed for serious lifters and athletes who want rapid recovery, superior muscle growth, and a rich taste with every scoop. It’s low in fat, easy to digest, and packed with BCAAs.",
+      "category": "Whey Protein"
+    },
+    {
+      "name": "MR Whey Protein",
+      "price": 32.99,
+      "image": "IMG/mrwheyprotien.jpeg",
+      "description": "MR Whey Protein delivers fast-absorbing proteins for maximum strength and performance. Enriched with digestive enzymes and clean ingredients, it fuels your body post-workout and helps build lean muscle mass efficiently.",
+      "category": "Whey Protein"
+    },
+    {
+      "name": "Tech Whey Protein",
+      "price": 35.99,
+      "image": "IMG/techwheyprotien.jpeg",
+      "description": "An advanced whey protein formula engineered for rapid muscle recovery and optimal protein synthesis. Tech Whey includes micro-filtered whey isolate and natural performance boosters for a powerful nutritional edge.",
+      "category": "Whey Protein"
+    },
+    {
+      "name": "Anabolic creatine",
+      "price": 28.50,
+      "image": "IMG/anaprotien.jpeg",
+      "description": "Anabolic creatine combines quality protein with vital nutrients to support your body's growth and recovery process. Perfect for both men and women, it’s your everyday solution for staying strong, active, and nourished.",
+      "category": "Whey Protein"
+    },
+    {
+      "name": "Best Creatine",
+      "price": 19.99,
+      "image": "IMG/bestcreatine.jpeg",
+      "description": "Formulated for athletes, Best Creatine enhances strength, endurance, and lean muscle mass by replenishing your body’s ATP reserves. Experience fewer crashes and more sustained power during high-intensity workouts.",
+      "category": "Creatine"
+    },
+    {
+      "name": "VS Creatine",
+      "price": 18.99,
+      "image": "IMG/vscreatine.jpeg",
+      "description": "A pure creatine monohydrate supplement that boosts muscle performance and hydration. With zero fillers, it mixes easily into any beverage and is perfect for improving reps, stamina, and muscle volumization.",
+      "category": "Creatine"
+    },
+    {
+      "name": "RSP Creatine",
+      "price": 20.50,
+      "image": "IMG/rspcreatine.jpeg",
+      "description": "RSP Creatine is crafted to fuel strength and improve performance with clinically tested ingredients. Ideal for athletes and bodybuilders seeking better recovery and muscle saturation with daily use.",
+      "category": "Creatine"
+    },
+    {
+      "name": "Ana Creatine",
+      "price": 21.75,
+      "image": "IMG/anacreatine.jpeg",
+      "description": "Ana Creatine enhances your power output, training volume, and muscle size. With consistent use, it helps reduce fatigue during intense lifting and supports explosive power during sprint-based workouts.",
+      "category": "Creatine"
+    },
+    {
+      "name": "ABE Pre Workout",
+      "price": 24.99,
+      "image": "IMG/abepreworkout.jpeg",
+      "description": "ABE Pre Workout provides a powerful energy surge, improved mental focus, and blood flow to supercharge your workout. It includes beta-alanine, caffeine, and taurine for lasting endurance and drive.",
+      "category": "Pre Workout"
+    },
+    {
+      "name": "Total Pre Workout",
+      "price": 23.50,
+      "image": "IMG/totalpreworkout.jpeg",
+      "description": "Total Pre Workout is your all-in-one pre-training fuel with nitric oxide boosters, fast-acting caffeine, and nootropics. It gives you insane focus, muscle pumps, and energy without the crash.",
+      "category": "Pre Workout"
+    },
+    {
+      "name": "Multivitamins",
+      "price": 15.99,
+      "image": "IMG/multivitamins.jpeg",
+      "description": "A balanced multivitamin blend that helps support immune health, energy levels, metabolism, and daily wellness. Ideal for anyone with an active lifestyle or looking to bridge nutritional gaps in their diet.",
+      "category": "Vitamins"
+    },
+    {
+      "name": "Natures Multivitamins",
+      "price": 17.99,
+      "image": "IMG/naturesmultivitamins.jpeg",
+      "description": "Natures Multivitamins deliver plant-based ingredients with antioxidants, minerals, and herbal blends. Tailored for natural wellness, it boosts vitality and supports immune, heart, and digestive health.",
+      "category": "Vitamins"
+    },
+    {
+      "name": "Webber Vitamins",
+      "price": 14.99,
+      "image": "IMG/webbervitamins.jpeg",
+      "description": "Webber Vitamins are a trusted daily formula packed with essential nutrients to support bone strength, cardiovascular function, and long-term wellness. Great for men and women of all ages.",
+      "category": "Vitamins"
+    },
+    {
+      "name": "ZMA Vitamins",
+      "price": 16.50,
+      "image": "IMG/zmavitamins.jpeg",
+      "description": "ZMA blends zinc, magnesium, and vitamin B6 to promote restful sleep, muscle recovery, and hormonal balance. Especially effective for athletes undergoing intense training or cutting phases.",
+      "category": "Vitamins"
+    }
+  ]
+  
