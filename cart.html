@@ -1,278 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunshine Chalet - Jezzine</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap">
-    <style>
-        :root {
-            --primary: #E67E22;
-            --secondary: #27AE60; 
-            --accent: #E74C3C;   
-            --light: #FEF9E7;   
-            --dark: #2C3E50;     
-            --highlight: #F1C40F; 
-            --pool-blue: #3498DB; 
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.7;
-            color: #333;
-            background: linear-gradient(135deg, #FEF9E7 0%, #EBF5FB 100%);
-            padding: 20px;
-            margin: 0;
-            min-height: 100vh;
-        }
-        
-        .container {
-            display: flex;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .column {
-            flex: 1;
-            min-width: 0;
-        }
-        
-        .resort-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 35px;
-            height: 100%;
-            box-sizing: border-box;
-            border: none;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(to bottom right, #FFFFFF, #F9F9F9);
-        }
-        
-        .resort-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background: linear-gradient(90deg, var(--primary), var(--highlight));
-        }
-        
-        h1 {
-            color: var(--primary);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-        }
-        
-        .location {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .location::before {
-            content: '📍';
-        }
-        
-        h2 {
-            color: var(--dark);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 22px;
-            margin-top: 30px;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--highlight);
-            position: relative;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-        }
-        
-        ul {
-            padding-left: 5px;
-            margin: 20px 0;
-            list-style: none;
-        }
-        
-        li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        li::before {
-            content: '•';
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 24px;
-            position: absolute;
-            left: 0;
-            top: -4px;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(231, 126, 34, 0.08) 0%, rgba(241, 196, 15, 0.08) 100%);
-            padding: 25px;
-            border-radius: 15px;
-            margin: 30px 0;
-            border: 1px solid rgba(231, 126, 34, 0.2);
-            position: relative;
-        }
-        
-        .highlight-box h3 {
-            color: var(--dark);
-            font-family: 'Montserrat', sans-serif;
-            margin-top: 0;
-            font-size: 20px;
-        }
-        
-        .price {
-            font-weight: 700;
-            color: var(--accent);
-            font-size: 20px;
-        }
-        
-        .checkin-card {
-            background: linear-gradient(135deg, rgba(39, 174, 96, 0.08) 0%, rgba(52, 152, 219, 0.08) 100%);
-            padding: 25px;
-            border-radius: 15px;
-            margin-top: 30px;
-            border: 1px solid rgba(39, 174, 96, 0.2);
-        }
-        
-        .important {
-            font-weight: 700;
-            color: var(--accent);
-            margin: 20px 0 15px;
-            display: block;
-            font-size: 18px;
-        }
-        
-        .capacity {
-            background-color: rgba(241, 196, 15, 0.3);
-            padding: 10px 18px;
-            border-radius: 20px;
-            display: inline-block;
-            margin: 15px 0;
-            font-weight: 600;
-            color: var(--dark);
-            border: 1px dashed var(--highlight);
-        }
-        
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-                gap: 25px;
-            }
-            
-            .resort-card {
-                padding: 25px;
-            }
-            
-            h1 {
-                font-size: 28px;
-            }
-        }
-        
-       
-        .watermark {
-            position: absolute;
-            right: 30px;
-            bottom: 20px;
-            opacity: 0.05;
-            font-size: 120px;
-            font-weight: 700;
-            color: var(--primary);
-            z-index: 0;
-            pointer-events: none;
-            user-select: none;
-        }
-        
-       
-        .pool-decoration {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100px;
-            height: 60px;
-            background: radial-gradient(circle at 70% 30%, var(--pool-blue) 0%, transparent 70%);
-            opacity: 0.1;
-            z-index: 0;
-        }
-       
-    </style>
+    <title>Cart | The Healthy Way</title>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cart.css">
+    <script defer src="cart.js"></script>
 </head>
+<style>
+body {
+    font-family: 'Epilogue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0D0D0D;
+    color: #ffffff;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1B1B1B;
+    padding: 15px 50px;
+    box-shadow: 0 4px 10px rgba(137, 207, 240, 0.2);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-container img {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #89CFF0;
+}
+
+/* Navigation */
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+}
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+nav ul li a.active,
+nav ul li a:hover {
+    color: #89CFF0;
+}
+
+/* Cart Section */
+.cart {
+    text-align: center;
+    padding: 50px 20px;
+}
+.cart h2 {
+    font-size: 32px;
+    color: #89CFF0;
+    margin-bottom: 30px;
+}
+
+/* Cart Table */
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+table {
+    width: 90%;
+    border-collapse: collapse;
+    background: #2A2A2A;
+    border-radius: 8px;
+    overflow: hidden;
+}
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+    text-align: center;
+}
+th {
+    color: #89CFF0;
+    font-size: 18px;
+    background-color: #1B1B1B;
+}
+td {
+    font-size: 16px;
+    color: #ffffff;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Buttons */
+button {
+    background: #89CFF0;
+    color: #0D0D0D;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+button:hover {
+    background: #6DB9DF;
+}
+.remove-btn {
+    background: red;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+.checkout-btn {
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 12px 24px;
+}
+
+/* Cart Summary */
+.cart-summary h3 {
+    font-size: 24px;
+    color: #89CFF0;
+    margin-top: 30px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1B1B1B;
+    color: #DDDDDD;
+    font-size: 14px;
+}
+
+
+</style>
 <body>
-    <div class="container">
-        <div class="column">
-            <div class="resort-card">
-                <div class="watermark"></div>
-                <div class="pool-decoration"></div>
-                <h1>INFINITY POOL</h1>
-                <p class="location"></p>
-                
-                <h2>Includes</h2>
-                <ul>
-                   <li>Private Swimming Pool</li>
-                   <li>Chairs & Tables</li>
-                   <li>BBQ Grill</li>
-                   <li>Stove</li>
-                   <li>Refrigirator</li>
-                   <li>Shaded outdoor seating area</li>
-                   <li>Outdoor W.C with shower</li>
-                   <li>TV</li>
-                   <li>Wifi</li>
-                   <li>Basket Ball court</li>
-                   <li>Jacouzi</li>
-                </ul>
-                
-                <div class="capacity">Maximum 12 persons including children</div>
-            </div>
+    <!-- Navbar -->
+    <header>
+        <div class="logo-container">
+            <img src="thehealthyway.jpeg" alt="The Healthy Way">
+            <div class="logo">The Healthy Way</div>
         </div>
-        
-        <div class="column">
-            <div class="resort-card">
-                <div class="watermark"></div>
-                <div class="pool-decoration"></div>
-                
-                <div class="highlight-box">
-                    <h3>DAY USE 10AM TILL 6PM</h3>
-                    <p class="price">Weekdays: 200$</p>
-                    <p class="price">Weekend: 250$</p>
-                    <h3>NIGHT USE 7PM TILL 1AM</h3>
-                    <p class="price">Weekdays: 180$</p>
-                    <p class="price">Weekend: 200$</p>
-                    <h3>FULL DAY</h3>
-                    <p class="price">Weekdays:300$</p>
-                    <p class="price">Weekend: 350$</p>
-                    <P class="pepo">10$ each additional person</P>
-                </div>
-                
-                
-                    
-                    
-                  
-                    </ul>
-                </div>
-            </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="cart.html"><button class="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button></a> 
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart">
+        <h2>Your Shopping Cart</h2>
+        <div class="cart-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Cart items will be dynamically inserted here -->
+                </tbody>
+            </table>
+            <h3>Total: $<span id="cart-total">0.00</span></h3>
+            <button class="checkout-btn">Proceed to Checkout</button>
+            
         </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 The Healthy Way. All rights reserved.</p>
+    </footer>
 </body>
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartItemsContainer = document.getElementById("cart-items");
+    const cartTotalElement = document.getElementById("cart-total");
+    const cartCountElement = document.getElementById("cart-count");
+    const cartButton = document.getElementById("cart-button");
+    const cartModal = document.getElementById("cart-modal");
+    const closeCartButton = document.querySelector(".close-cart");
+
+    function updateCartDisplay() {
+        cartItemsContainer.innerHTML = "";
+        let total = 0;
+        let itemCount = 0;
+
+        cart.forEach((item, index) => {
+            let itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            itemCount += item.quantity;
+
+            let row = `
+                <tr>
+                    <td>${item.name}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td>${item.quantity}</td>
+                    <td>$${itemTotal.toFixed(2)}</td>
+                    <td>
+                        <button class="remove-btn" data-index="${index}">Remove</button>
+                    </td>
+                </tr>
+            `;
+            cartItemsContainer.innerHTML += row;
+        });
+
+        cartTotalElement.textContent = total.toFixed(2);
+        cartCountElement.textContent = itemCount;
+
+        document.querySelectorAll(".remove-btn").forEach(button => {
+            button.addEventListener("click", (e) => {
+                let index = e.target.getAttribute("data-index");
+                cart.splice(index, 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartDisplay();
+            });
+        });
+    }
+
+    // Show the cart modal when clicking the cart button
+    cartButton.addEventListener("click", () => {
+        cartModal.style.display = "flex";
+        updateCartDisplay();
+    });
+
+    // Hide the cart modal when clicking the close button
+    closeCartButton.addEventListener("click", () => {
+        cartModal.style.display = "none";
+    });
+
+    // Close the cart modal when clicking outside the cart content
+    window.addEventListener("click", (event) => {
+        if (event.target === cartModal) {
+            cartModal.style.display = "none";
+        }
+    });
+
+    updateCartDisplay();
+
+    document.querySelector(".checkout-btn").addEventListener("click", () => {
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+        } else {
+            alert("Proceeding to checkout...");
+            localStorage.removeItem("cart");
+            updateCartDisplay();
+            cartModal.style.display = "none";
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartCountElement = document.getElementById("cart-count");
+
+    // Function to update cart count in the navbar
+    function updateCartCount() {
+        let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCountElement.textContent = totalItems;
+    }
+
+    // Add to Cart Functionality
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", () => {
+            const productName = button.getAttribute("data-name");
+            const productPrice = parseFloat(button.getAttribute("data-price"));
+
+            // Check if item is already in cart
+            let existingProduct = cart.find(item => item.name === productName);
+
+            if (existingProduct) {
+                existingProduct.quantity += 1; // Increase quantity if already exists
+            } else {
+                cart.push({ name: productName, price: productPrice, quantity: 1 });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+            alert(`${productName} added to cart!`);
+        });
+    });
+
+    updateCartCount();
+});
+document.addEventListener("DOMContentLoaded", () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartItemsContainer = document.getElementById("cart-items");
+    const cartTotalElement = document.getElementById("cart-total");
+    const cartCountElement = document.getElementById("cart-count");
+
+    // Function to update the cart display
+    function updateCartDisplay() {
+        cartItemsContainer.innerHTML = "";
+        let total = 0;
+        let itemCount = 0;
+
+        cart.forEach((item, index) => {
+            let itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            itemCount += item.quantity;
+
+            let row = `
+                <tr>
+                    <td>${item.name}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td>
+                        <button class="decrease-qty" data-index="${index}">-</button>
+                        ${item.quantity}
+                        <button class="increase-qty" data-index="${index}">+</button>
+                    </td>
+                    <td>$${itemTotal.toFixed(2)}</td>
+                    <td>
+                        <button class="remove-btn" data-index="${index}">Remove</button>
+                    </td>
+                </tr>
+            `;
+            cartItemsContainer.innerHTML += row;
+        });
+
+        cartTotalElement.textContent = total.toFixed(2);
+        cartCountElement.textContent = itemCount;
+
+        // Attach event listeners for quantity buttons
+        document.querySelectorAll(".increase-qty").forEach(button => {
+            button.addEventListener("click", (e) => {
+                let index = e.target.getAttribute("data-index");
+                cart[index].quantity += 1;
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartDisplay();
+            });
+        });
+
+        document.querySelectorAll(".decrease-qty").forEach(button => {
+            button.addEventListener("click", (e) => {
+                let index = e.target.getAttribute("data-index");
+                if (cart[index].quantity > 1) {
+                    cart[index].quantity -= 1;
+                } else {
+                    cart.splice(index, 1); // Remove if quantity is 1
+                }
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartDisplay();
+            });
+        });
+
+        // Attach event listeners for remove buttons
+        document.querySelectorAll(".remove-btn").forEach(button => {
+            button.addEventListener("click", (e) => {
+                let index = e.target.getAttribute("data-index");
+                cart.splice(index, 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartDisplay();
+            });
+        });
+    }
+
+    // Checkout Button
+    document.querySelector(".checkout-btn").addEventListener("click", () => {
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+        } else {
+            alert("Proceeding to checkout...");
+            localStorage.removeItem("cart");
+            updateCartDisplay();
+        }
+    });
+
+    updateCartDisplay();
+});
+
+
+</script>
 </html>
