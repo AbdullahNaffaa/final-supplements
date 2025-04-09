@@ -27,13 +27,7 @@
       "description": "An advanced whey protein formula engineered for rapid muscle recovery and optimal protein synthesis. Tech Whey includes micro-filtered whey isolate and natural performance boosters for a powerful nutritional edge.",
       "category": "Whey Protein"
     },
-    {
-      "name": "Anabolic creatine",
-      "price": 28.50,
-      "image": "IMG/anaprotien.jpeg",
-      "description": "Anabolic creatine combines quality protein with vital nutrients to support your body's growth and recovery process. Perfect for both men and women, it’s your everyday solution for staying strong, active, and nourished.",
-      "category": "Whey Protein"
-    },
+    
     {
       "name": "Best Creatine",
       "price": 19.99,
