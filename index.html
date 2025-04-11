@@ -393,7 +393,6 @@ footer {
         </form>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 The Healthy Way. All rights reserved.</p>
     </footer>
@@ -408,10 +407,12 @@ footer {
         });
     });
 
-    document.getElementById("contactForm").addEventListener("submit", (event) => {
-        event.preventDefault();
-        alert("Message sent! We'll get back to you soon.");
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Message sent! We'll get back to you soon.");
+    this.reset();
     });
+
 });
 document.addEventListener("DOMContentLoaded", () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
