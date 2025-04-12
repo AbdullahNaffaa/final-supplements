@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | The Healthy Way</title>
+  <style>
+    body {
+      font-family: 'Epilogue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0D0D0D;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .signup-container {
+      background: #2A2A2A;
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(137, 207, 240, 0.15);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      color: #89CFF0;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border: none;
+      border-radius: 6px;
+      background: #3A3A3A;
+      color: #ffffff;
+      font-size: 16px;
+    }
+
+    .signup-btn {
+      background: #89CFF0;
+      color: #0D0D0D;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .signup-btn:hover {
+      background: #6DB9DF;
+    }
+
+    p {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #DDDDDD;
+    }
+
+    a {
+      color: #89CFF0;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="signup-container">
+    <h2>Create an Account</h2>
+    <form id="signupForm">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+      <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+      } else {
+        alert("Account Created Successfully!");
+        window.location.href = "login.html"; // Redirect to login page
+      }
+    });
+  </script>
+</body>
+
+</html>
