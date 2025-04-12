@@ -29,16 +29,16 @@
     },
 
     {
-      "name": "Best Creatine",
+      "name": " BPI Best Creatine",
       "price": 19.99,
-      "image": "IMG/bestcreatine.jpeg",
+      "image": "IMG/bpicreatine.jpeg",
       "description": "Formulated for athletes, Best Creatine enhances strength, endurance, and lean muscle mass by replenishing your body’s ATP reserves. Experience fewer crashes and more sustained power during high-intensity workouts.",
       "category": "Creatine"
     },
     {
       "name": "VS Creatine",
       "price": 18.99,
-      "image": "IMG/vscreatine.jpeg",
+      "image": "IMG/vs.jpeg",
       "description": "A pure creatine monohydrate supplement that boosts muscle performance and hydration. With zero fillers, it mixes easily into any beverage and is perfect for improving reps, stamina, and muscle volumization.",
       "category": "Creatine"
     },
