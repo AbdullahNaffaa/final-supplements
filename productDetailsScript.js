@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function fetchSimilarProducts(product) {
-      fetch('products.json')
+      fetch('productsDetails.json')
         .then(res => res.json())
         .then(allProducts => {
           const filtered = allProducts.filter(p =>
