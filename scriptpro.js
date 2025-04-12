@@ -1,5 +1,5 @@
 let products = [];
-    fetch('products.json')
+    fetch('productsDetails.json')
       .then(response => response.json())
       .then(data => {
         console.log(data)
