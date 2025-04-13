@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartItemsContainer = document.getElementById("cart-items");
-    const cartTotalElement = document.getElementById("cart-total");
-    const cartCountElement = document.getElementById("cart-count");
-    const cartButton = document.getElementById("cart-button");
-    const cartModal = document.getElementById("cart-modal");
-    const closeCartButton = document.querySelector(".close-cart");
+    let cartItemsContainer = document.getElementById("cart-items");
+    let cartTotalElement = document.getElementById("cart-total");
+    let cartCountElement = document.getElementById("cart-count");
+    let cartButton = document.getElementById("cart-button");
+    let cartModal = document.getElementById("cart-modal");
+    let closeCartButton = document.querySelector(".close-cart");
 
     function updateCartDisplay() {
         cartItemsContainer.innerHTML = "";
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 document.addEventListener("DOMContentLoaded", () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartCountElement = document.getElementById("cart-count");
+    let cartCountElement = document.getElementById("cart-count");
 
     // Function to update cart count in the navbar
     function updateCartCount() {
@@ -88,8 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add to Cart Functionality
     document.querySelectorAll(".add-to-cart").forEach(button => {
         button.addEventListener("click", () => {
-            const productName = button.getAttribute("data-name");
-            const productPrice = parseFloat(button.getAttribute("data-price"));
+            let productName = button.getAttribute("data-name");
+            let productPrice = parseFloat(button.getAttribute("data-price"));
 
             // Check if item is already in cart
             let existingProduct = cart.find(item => item.name === productName);
@@ -110,9 +110,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 document.addEventListener("DOMContentLoaded", () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartItemsContainer = document.getElementById("cart-items");
-    const cartTotalElement = document.getElementById("cart-total");
-    const cartCountElement = document.getElementById("cart-count");
+    let cartItemsContainer = document.getElementById("cart-items");
+    let cartTotalElement = document.getElementById("cart-total");
+    let cartCountElement = document.getElementById("cart-count");
 
     // Function to update the cart display
     function updateCartDisplay() {
