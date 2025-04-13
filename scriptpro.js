@@ -8,24 +8,24 @@ let products = [];
       })
       .catch(error => console.error('Failed to load products:', error));
 
-    const categories = ["Whey Protein", "Creatine", "Pre Workout", "Vitamins"];
+      let  categories = ["Whey Protein", "Creatine", "Pre Workout", "Vitamins"];
 
     function renderProducts() {
-      const container = document.getElementById("product-sections");
+      let  container = document.getElementById("product-sections");
       categories.forEach(category => {
-        const section = document.createElement("section");
+        let  section = document.createElement("section");
         section.className = "category-section";
         section.id = category.toLowerCase().replace(/\s+/g, '-');
 
-        const heading = document.createElement("h3");
+        let  heading = document.createElement("h3");
         heading.textContent = category;
         section.appendChild(heading);
 
-        const grid = document.createElement("div");
+        let  grid = document.createElement("div");
         grid.className = "product-grid";
 
         products.filter(p => p.category === category).forEach(product => {
-          const productDiv = document.createElement("div");
+          let  productDiv = document.createElement("div");
           productDiv.className = "product";
           productDiv.innerHTML = `
             <a href="productDetails.html" class="product-link" data-product='${JSON.stringify(product)}' style="text-decoration: none; color: inherit;">
@@ -52,18 +52,18 @@ let products = [];
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let  cart = JSON.parse(localStorage.getItem("cart")) || [];
       const cartCountElement = document.getElementById("cart-count");
 
       function updateCartCount() {
-        let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        let  totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         cartCountElement.textContent = totalItems;
       }
 
       document.body.addEventListener("click", event => {
         if (event.target.classList.contains("add-to-cart")) {
-          const name = event.target.getAttribute("data-name");
-          const price = parseFloat(event.target.getAttribute("data-price"));
+          let  name = event.target.getAttribute("data-name");
+          let  price = parseFloat(event.target.getAttribute("data-price"));
 
           let existing = cart.find(item => item.name === name);
           if (existing) {
