@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     let product = JSON.parse(localStorage.getItem("selectedProduct"));
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let quantity = 1;
 
     let  cartCountElement = document.getElementById("cart-count");
